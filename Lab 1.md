@@ -150,13 +150,16 @@ Now, create the variables file with all variables to be used in the `DevOpsServe
 ```
 vi variables.tf
 ```
-**Note:** Change the following Inputs in `variables.tf.`
-
-1. Edit the **Allocated Region** (**Ex:** ap-south-1) & **AMI ID** of same region,
-2. Replace the same **Security Group ID** Created for the Jump Server
-3. Add your Name for **KeyPair** ("**YourName**-CICDlab-KeyPair")
-
 ```
+#
+# **Note:** Change the following Inputs in `variables.tf.`
+
+# Edit the **Allocated Region** (**Ex:** ap-south-1) & **AMI ID** of same region,
+# Replace the same **Security Group ID** Created for the Jump Server
+# Add your Name for **KeyPair** ("**YourName**-CICDlab-KeyPair")
+#
+#
+
 variable "region" {
     default = "us-east-1"
 }
