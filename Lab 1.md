@@ -78,11 +78,10 @@ aws iam list-users
 ```
 sudo mkdir /etc/ansible && sudo touch /etc/ansible/hosts
 ```
+Change the permissions. The below command gives `Read, Write and Execute` permissions to `Owner,` `Read and Write` permissions to the `Group,` and `Read and Write` permissions to `Others.`
 ```
 sudo chmod 766 /etc/ansible/hosts
 ```
-**Note:** The above command gives `Read, Write and Execute` permissions to `Owner,` `Read and Write` permissions to the `Group,` and `Read and Write` permissions to `Others.`
-
 Cross verify using the below command
 ```
 ls -la /etc/ansible/
@@ -92,11 +91,7 @@ ls -la /etc/ansible/
 
 ### Task 5: Utilizing Terraform, initiate the deployment of two new servers: `Docker-server` and `Jenkins-server` 
 
-* For **Git Operations Lab** we will use the same **Jump EC2** from where we are operating now 
-
-**Step-01:** As a first step, create a keyPair using `ssh-keygen` Command.
-
-(Same public will be attached to newly created EC2 Instances)
+As a first step, create a keyPair using `ssh-keygen` Command.
 
 **Note:**
 1. This will create `id_rsa` and `id_rsa.pub` in Jump Machine in `/home/ubuntu/.ssh/` path.
