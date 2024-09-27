@@ -46,7 +46,7 @@ terraform -v
 
 ![image](https://github.com/user-attachments/assets/4dc530fa-b206-4bf2-a0eb-9499ff9e923a)
 
-### Task-2: Install Python 3, pip, AWS CLI, and Ansible on to Jump Server
+### Task 3: Install Python 3, pip, AWS CLI, and Ansible on to Jump Server
 Install Python 3 and the required packages:
 ```
 sudo apt install python3-pip -y
@@ -74,12 +74,12 @@ aws s3 ls
 aws iam list-users
 ```
 
-### Task 3: Create a host inventory file with the necessary permissions (Ansible need this Inventory file for identifying the targets)
- ```
- sudo mkdir /etc/ansible && sudo touch /etc/ansible/hosts
+### Task 4: Create a host inventory file with the necessary permissions (Ansible need this Inventory file for identifying the targets)
+```
+sudo mkdir /etc/ansible && sudo touch /etc/ansible/hosts
 ```
 ```
- sudo chmod 766 /etc/ansible/hosts
+sudo chmod 766 /etc/ansible/hosts
 ```
 **Note:** The above command gives `Read, Write and Execute` permissions to `Owner,` `Read and Write` permissions to the `Group,` and `Read and Write` permissions to `Others.`
 
