@@ -1,4 +1,4 @@
-## Lab 1: Use Terraform to Setup the `Docker Server` and `Jenkins Server` for CICD Lab.
+## Use Terraform to Setup the `Docker Server` and `Jenkins Server` for CICD Lab.
 
 **Objective:**
 The objective of this lab is to set up two AWS EC2 instances, `one for Jenkins` and `one for Docker,` using Terraform. This lab aims to provide a foundation for building a Continuous Integration/Continuous Deployment (CICD) environment.
