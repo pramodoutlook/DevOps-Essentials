@@ -59,7 +59,7 @@ sudo ./aws/install
 ```
 Installing Ansible
 ```
-sudo apt-get install ansible -y
+sudo apt install ansible -y
 ```
 For Authentication with AWS we need to provide `IAM User's CLI Credentials`
 ```
