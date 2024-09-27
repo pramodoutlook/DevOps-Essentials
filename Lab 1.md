@@ -132,6 +132,7 @@ resource "aws_instance" "my-machine" {
   key_name               = var.key_name
   vpc_security_group_ids = [var.sg_id]
   instance_type          = var.ins_type
+  depends-on             = [aws_key_pair.mykeypair]
 
   # Read from the list my-servers to name each server
   tags = {
