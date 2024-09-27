@@ -65,28 +65,7 @@ For Authentication with AWS we need to provide `IAM User's CLI Credentials`
 ```
 aws configure
 ```
-#### Credentials Example:
-
-| **Access Key ID** | **Secret Access Key** |
-| ----------------- | --------------------- |
-| AKIAXMWJXSSHRD27T6SC | H4Vh0U5oenKfmJ/+FEUcbaGbDjcnGAmZvQLX7zTT |
-
-<details>
-  <summary>To know how to create New Credentials, Click here:</summary>
-
-##### Here is a step-by-step summary of the instructions:
-
-1. Go to the AWS console. On the top right corner, click on your name or AWS profile ID.
-2. Click on Security Credentials.
-3. Under AWS IAM Credentials, click on **Create Access Key**.
-4. If you already have two active keys, deactivate and delete the older one. Create a new one, download, and save it.
-5. Complete the `aws configure` step using the newly created access key, secret key, region, and output format.
-</details>
-
----------------------------------------------------------------------
-#### Once configured, do a smoke test to check if your credentials are valid and got the access to AWS account.
-
-You can check using any one command or both.
+Once configured, do a smoke test to check if your credentials are valid and got the access to AWS account.
 ```
 aws s3 ls
 ```
@@ -95,7 +74,7 @@ aws s3 ls
 aws iam list-users
 ```
 
-#### Create a host inventory file with the necessary permissions (Ansible need this Inventory file for identifying the targets)
+### Task 3: Create a host inventory file with the necessary permissions (Ansible need this Inventory file for identifying the targets)
  ```
  sudo mkdir /etc/ansible && sudo touch /etc/ansible/hosts
 ```
