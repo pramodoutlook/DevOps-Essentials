@@ -1,7 +1,4 @@
-## Use Terraform to Setup the `Docker Server` and `Jenkins Server` for CICD Lab.
-
-**Objective:**
-The objective of this lab is to set up two AWS EC2 instances, `one for Jenkins` and `one for Docker,` using Terraform. This lab aims to provide a foundation for building a Continuous Integration/Continuous Deployment (CICD) environment.
+## Setup the `Docker Server` and `Jenkins Server` for CICD Lab.
 
 ### Task 1: Manually launch the Jump Server EC2 Instance
 
@@ -17,7 +14,6 @@ The objective of this lab is to set up two AWS EC2 instances, `one for Jenkins` 
 
 
 ### Task 2: Installing Terraform onto `Jump Server` to automate the creation of 2 more EC2 instances.
-
 Once the Jump Server is up and running, SSH into the machine using `MobaXterm` or `Putty` with the username `ubuntu` and do the following:
 
 ```
