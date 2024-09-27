@@ -17,7 +17,7 @@
 Once the Jump Server is up and running, SSH into the machine using `MobaXterm` or `Putty` with the username `ubuntu` and do the following:
 
 ```
-sudo hostnamectl set-hostname AnchorServer
+sudo hostnamectl set-hostname JumpServer
 bash
 ```
 ```
@@ -48,7 +48,7 @@ terraform -v
 terraform
 ```
 ---------------------------------------------------------------------
-### Task-2: Install Python 3, pip, AWS CLI, and Ansible on to Anchor Server
+### Task-2: Install Python 3, pip, AWS CLI, and Ansible on to Jump Server
 Install Python 3 and the required packages:
 ```
 sudo apt-get update
@@ -112,14 +112,14 @@ aws iam list-users
 ---------------------------------------------------------------------
 ### Task-3: Utilizing Terraform, initiate the deployment of two new servers: `Docker-server` and `Jenkins-server` 
 
-* For **Git Operations Lab** we will use the same **Anchor EC2** from where we are operating now 
+* For **Git Operations Lab** we will use the same **Jump EC2** from where we are operating now 
 
 **Step-01:** As a first step, create a keyPair using `ssh-keygen` Command.
 
 (Same public will be attached to newly created EC2 Instances)
 
 **Note:**
-1. This will create `id_rsa` and `id_rsa.pub` in Anchor Machine in `/home/ubuntu/.ssh/` path.
+1. This will create `id_rsa` and `id_rsa.pub` in Jump Machine in `/home/ubuntu/.ssh/` path.
 2. While creating choose defaults like:
    * path as **/home/ubuntu/.ssh/id_rsa**,
    * don't set up any passphrase, and just hit the '**Enter**' key for 3 questions it asks.
@@ -188,7 +188,7 @@ vi variables.tf
 **Note:** Change the following Inputs in `variables.tf.`
 
 1. Edit the **Allocated Region** (**Ex:** ap-south-1) & **AMI ID** of same region,
-2. Replace the same **Security Group ID** Created for the Anchor Server
+2. Replace the same **Security Group ID** Created for the Jump Server
 3. Add your Name for **KeyPair** ("**YourName**-CICDlab-KeyPair")
 
 ```
@@ -196,7 +196,7 @@ variable "region" {
     default = "us-east-1"
 }
 
-# Change the SG ID. You can use the same SG ID used for your CICD anchor server
+# Change the SG ID. You can use the same SG ID used for your CICD Jump server
 # Basically the SG should open ports 22, 80, 8080, 9999, and 4243
 variable  "sg_id" {
     default = "sg-06dc8863d3ed3d280" # us-east-1
@@ -264,9 +264,9 @@ sudo vi /etc/ansible/hosts
 ```
 Once Updated, Save the File.
 
-**Step-06:**  Check the access from `Anchor to Jenkins` and `Anchor to Docker`
+**Step-06:**  Check the access from `Jump to Jenkins` and `Jump to Docker`
 
-##### From `Anchor Server` SSH into `Jenkins-Server` and check they are accessible.
+##### From `Jump Server` SSH into `Jenkins-Server` and check they are accessible.
 
 ```
 ssh ubuntu@<Jenkins ip address>
@@ -279,9 +279,9 @@ bash
 ```
 sudo apt update
 ```
-**Exit** only from the Jenkins Server, not the Anchor Server.
+**Exit** only from the Jenkins Server, not the Jump Server.
 
-##### Now from `Anchor Server` SSH into `Docker-Server` and check they are accessible.
+##### Now from `Jump Server` SSH into `Docker-Server` and check they are accessible.
 
 ```
 ssh ubuntu@<Docker ip address>  
@@ -294,12 +294,12 @@ bash
 ```
 sudo apt update
 ```
-**Exit** only from the Docker Server, not the Anchor Server.
+**Exit** only from the Docker Server, not the Jump Server.
 
 ---------------------------------------------------------------------
 ### Task-4: Use `Ansible` to deploy respective packages onto each of the servers 
 
-#### Step-01: In Anchor Server Create a directory and change to it
+#### Step-01: In Jump Server Create a directory and change to it
 ```
 cd ~
 mkdir ansible && cd ansible
