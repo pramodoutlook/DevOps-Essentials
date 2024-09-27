@@ -98,27 +98,15 @@ As a first step, create a keyPair using `ssh-keygen` Command.
 2. While creating choose defaults like:
    * path as **/home/ubuntu/.ssh/id_rsa**,
    * don't set up any passphrase, and just hit the '**Enter**' key for 3 questions it asks.
-
+3. `-t rsa:` Specifies the type of key to create, in this case, RSA.
+4. `-b 2048:` Specifies the number of bits in the key, 2048 bits in this case. The larger the number of bits, the stronger the key.
 ```
 ssh-keygen -t rsa -b 2048 
 ```
-
-<details>
-  <summary>Click here for explanation</summary>
-  
-* `-t rsa:` Specifies the type of key to create, in this case, RSA.
-* `-b 2048:` Specifies the number of bits in the key, 2048 bits in this case. The larger the number of bits, the stronger the key.
-</details>
-
- **Step-02:** Create the terraform directory and set up the config files in it
-
-Create the Terraform configuration and variables files as described.
-
+Now Create the terraform directory and set up the config files in it
 ```
 mkdir devops-labs && cd devops-labs
 ```
-
-**Step-03:** Now create the Terraform config files.
 ```
 vi DevOpsServers.tf
 ```
