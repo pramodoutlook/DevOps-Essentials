@@ -191,15 +191,9 @@ variable "my-servers" {
   default = ["jenkins-server", "docker-server"]
 }
 ```
-**Step-04:** Now, execute the terraform commands to launch the new servers
+Now, execute the terraform commands to launch the new servers
 ```
 terraform init
-```
-```
-terraform fmt
-```
-```
-terraform validate
 ```
 ```
 terraform plan
@@ -207,36 +201,21 @@ terraform plan
 ```
 terraform apply -auto-approve
 ```
-Once the Changes are Applies, Go to `EC2 Dashboard` and check that `2 New Instances` are launched.
-
-**Step-05:** Once the Terraform commands are executed, check the `inventory file` and ensure the below output.
+Once the Changes are Applies, Go to `EC2 Dashboard` and check that `2 New Instances` are launched. Also check the `inventory file` and ensure the below output.
 ```
 cat /etc/ansible/hosts
 ```
-The above command displays the IP addresses of the `Jenkins server` and `docker server` as an example shown below.
+![image](https://github.com/user-attachments/assets/b882382f-ba8b-4ca1-b9e7-a96bdbf664a9)
 
-* [jenkins-server]
 
-  44.202.164.153
-  
-* [docker-server]
+### Task 6: Check the access from `Jump to Jenkins` and `Jump to Docker`
 
-  34.203.249.54
-
-**(Optional Step):** When you `Stop` and `Start` the EC2 Instances, the Public IP Changes. In that case, execute the below command to update Jenkin's & Docker's new Public IPs in `Inventory file.` 
-```
-sudo vi /etc/ansible/hosts 
-```
-Once Updated, Save the File.
-
-**Step-06:**  Check the access from `Jump to Jenkins` and `Jump to Docker`
-
-##### From `Jump Server` SSH into `Jenkins-Server` and check they are accessible.
+From `Jump Server` SSH into `Jenkins-Server` and check they are accessible.
 
 ```
 ssh ubuntu@<Jenkins ip address>
 ```
-#### Set the hostname as
+Set the hostname
 ```
 sudo hostnamectl set-hostname Jenkins
 bash
@@ -244,14 +223,19 @@ bash
 ```
 sudo apt update
 ```
-**Exit** only from the Jenkins Server, not the Jump Server.
+Exit from the Jenkins server
+```
+exit
+```
+```
+exit
+```
 
-##### Now from `Jump Server` SSH into `Docker-Server` and check they are accessible.
-
+Now from `Jump Server` SSH into `Docker-Server` and check they are accessible.
 ```
 ssh ubuntu@<Docker ip address>  
 ```
-#### Set the hostname as
+Set the hostname as
 ```
 sudo hostnamectl set-hostname Docker
 bash
@@ -259,10 +243,16 @@ bash
 ```
 sudo apt update
 ```
-**Exit** only from the Docker Server, not the Jump Server.
+Exit only from the Docker Server, not the Jump Server.
+```
+exit
+```
+```
+exit
+```
 
----------------------------------------------------------------------
-### Task-4: Use `Ansible` to deploy respective packages onto each of the servers 
+
+### Task 7: Use `Ansible` to deploy respective packages onto each of the servers 
 
 #### Step-01: In Jump Server Create a directory and change to it
 ```
