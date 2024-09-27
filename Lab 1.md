@@ -211,7 +211,7 @@ cat /etc/ansible/hosts
 
 ### Task 6: Check the access from `Jump to Jenkins` and `Jump to Docker`
 
-From `Jump Server` SSH into `Jenkins-Server` and check they are accessible.
+From `Jump Server` SSH into `Jenkins-Server`, check they are accessible.
 
 ```
 ssh ubuntu@<Jenkins ip address>
@@ -254,19 +254,15 @@ exit
 
 
 ### Task 7: Use `Ansible` to deploy respective packages onto each of the servers 
-
-#### Step-01: In Jump Server Create a directory and change to it
+In Jump Server Create a directory and change to it
 ```
-cd ~
-mkdir ansible && cd ansible
+cd ~ && mkdir ansible && cd ansible
 ```
-#### Step-02: Now, Create a playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.`
-
-* Create a new File with the name `DevOpsSetup.yml.`
+Now, Create a playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.` For this Create a new File with the name `DevOpsSetup.yml.`
 ```
 vi DevOpsSetup.yml
 ```
-* Copy and paste the below code and save it.
+Copy and paste the below code and save it.
 ```
 ---
 - name: Start installing Jenkins pre-requisites before installing Jenkins
@@ -387,29 +383,18 @@ vi DevOpsSetup.yml
       state: restarted
 ...
 ```
-#### Step-03: Run the above playbook to deploy the packages onto target servers.
+Run the above playbook to deploy the packages onto target servers.
 ```
 ansible-playbook DevOpsSetup.yml
 ```
-At the end of this step, the `Docker-Server` and `Jenkins-Server` will be ready for performing further Labs
+Verify the Jenkins Landing Page: Open a web browser and navigate to your Jenkins landing page using your Jenkins server's public IP address. Replace `<Your_Jenkins_IP>` with the actual public IP.
+```
+http://<Your_Jenkins_IP>:8080/
+```
+Verify the Docker Landing Page: Open a web browser and access the Docker landing page using your Docker server's public IP address. Replace `<Your_Docker_IP>` with the actual public IP.
+```
+http://<Your_Docker_IP>:4243/version
+```
 
-#### Step-04:
 
-**1. Verify the Jenkins Landing Page:**
 
-   * Open a web browser and navigate to your Jenkins landing page using your Jenkins server's public IP address. Replace `<Your_Jenkins_IP>` with the actual public IP.
-   
-   ```
-   http://<Your_Jenkins_IP>:8080/
-   ```
-
-**2. Verify the Docker Landing Page:**
-
-   * Open a web browser and access the Docker landing page using your Docker server's public IP address. Replace `<Your_Docker_IP>` with the actual public IP.
-   
-   ```
-   http://<Your_Docker_IP>:4243/version
-   ```
-
-#### =============================END of LAB-01=============================
----
