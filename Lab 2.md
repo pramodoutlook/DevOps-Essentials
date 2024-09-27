@@ -20,12 +20,12 @@
 
 3. Basic familiarity with **Git Commands.**
 
-   Once the `GitHub Account` and `Empty repository` is ready, let's operate in the Anchor Server.
+   Once the `GitHub Account` and `Empty repository` is ready, let's operate in the Jump Server.
 
 
 ### Task 1: Initializing the local git repository and committing changes
 
-On the `Anchor Server,` do the below:
+On the `Jump Server,` do the below:
 ```
 cd ~
 ```
