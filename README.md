@@ -14,3 +14,5 @@ This guide provides step-by-step instructions for completing various DevOps labs
 2. Capture screenshots for each step in every lab. 
 3. Remember to Stop your EC2 Instances once your training is done to avoid unnecessary costs.
 4. Don't hesitate to ask if you have any questions about concepts or labs.
+
+
