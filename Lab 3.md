@@ -1,14 +1,8 @@
-## Lab 3: Configuring Jenkins server and Installing Tomcat onto Jenkin's Server for Deploying our Application.
+## Configuring Jenkins server and Installing Tomcat onto Jenkin's Server for Deploying our Application.
 
-**Objective:**
-The objective of this lab is to configure Jenkins to build and deploy applications. It includes `Setting up Jenkins,` `installing necessary plugins` and `configuring Jenkins to build Maven projects,` and `Installing Tomcat Server for viewing the Web Page.' 
+### Task 1: Configure Jenkins Server
 
-
-### Task-1: Configure Jenkins Server:
-
-#### Step-00:
-
-1. Initially, Copy the **private key** from **Anchor Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
+Initially, Copy the **private key** from **Anchor Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
 ```
 cd ~
 ```
@@ -45,14 +39,14 @@ ansible docker-server -m copy -a "src=/home/ubuntu/.ssh/id_rsa dest=/home/ubuntu
    
    </details>
 
-2. Now `SSH` from `Jenkins Server` ---> `Docker Server` and from `Docker Server` ---> `Jenkins Server`
+Now `SSH` from `Jenkins Server` ---> `Docker Server` and from `Docker Server` ---> `Jenkins Server`
 ```
 ssh ubuntu@<Public IP of Docker>
 ```
 ```
 ssh ubuntu@<Public IP of Jenkins>
 ```
-#### Step-01:
+
 
 1. Go to the **Web Browser** and open a new tab then enter the URL as shown:
 
