@@ -83,8 +83,10 @@ sudo chmod 766 /etc/ansible/hosts
 ```
 **Note:** The above command gives `Read, Write and Execute` permissions to `Owner,` `Read and Write` permissions to the `Group,` and `Read and Write` permissions to `Others.`
 
----------------------------------------------------------------------
-### Task-3: Utilizing Terraform, initiate the deployment of two new servers: `Docker-server` and `Jenkins-server` 
+![image](https://github.com/user-attachments/assets/25314a0c-8d3c-483b-96a8-0b7be2017424)
+
+
+### Task 5: Utilizing Terraform, initiate the deployment of two new servers: `Docker-server` and `Jenkins-server` 
 
 * For **Git Operations Lab** we will use the same **Jump EC2** from where we are operating now 
 
