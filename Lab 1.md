@@ -3,35 +3,22 @@
 **Objective:**
 The objective of this lab is to set up two AWS EC2 instances, `one for Jenkins` and `one for Docker,` using Terraform. This lab aims to provide a foundation for building a Continuous Integration/Continuous Deployment (CICD) environment.
 
----------------------------------------------------------------------
-### Task-0: The first step is to `Manually Launch an Anchor EC2 Server` with the below configuration:
+### Task 1: Manually launch the Jump Server EC2 Instance
 
-#### Step-01: Pre-requisites:
-
-Login to AWS Console, go to EC2 Dashboard, and under "Network & Security," create a key pair and a security group.
-
-1. Create key pair with name: `DevOps-Keypair-YourName`
-2. Create security group with name: `DevOps-SG-YourName`
+* Region: North Virginia (us-east-1).
+* Use tag Name: `Mehar-Jump-Server`
+* AMI Type and OS Version: `Ubuntu 22.04 LTS`
+* Instance type: `t2.micro`
+* Create key pair with name: `Mehar-DevOps-Keypair`
+* Create security group with name: `Mehar-DevOps-SG`
    (Include Ports: `22 [SSH],` `80 [HTTP],` `8080 [Jenkins],` `9999 [Tomcat],` and `4243 [Docker]`)
-
-Once you are ready, and while Manually Launching an `Anchor EC2 Instance`, select the above `DevOps-Keypair-YourName` and `DevOps-SG-YourName`
-
-#### Step-02: Steps for Manually launching the Anchor EC2 Instance
-
-* **Region:** North Virginia (us-east-1).
-* **Use tag Name:** `Anchor-EC2-YourName`
-* **AMI Type and OS Version:** `Ubuntu 22.04 LTS`
-* **Instance type:** `t2.micro`
-* Choose the existing Keypair with the Name: `DevOps-Keypair-YourName`
-* In security groups, Choose the existing security group with name: `DevOps-SG-YourName`
-* **Configure Storage:** 10 GiB
+* Configure Storage: 10 GiB
 * Click on `Launch Instance.`
----------------------------------------------------------------------
-### Task-1: Installing Terraform onto `Anchor Server` to automate the creation of 2 more EC2 instances.
 
-Once the Anchor EC2 server is up and running, SSH into the machine using `MobaXterm` or `Putty` with the username `ubuntu` and do the following:
 
-[Click here](https://mobaxterm.mobatek.net/download-home-edition.html) to download MobaXterm (**Note:** Choose `Installer Edition` and install on your Laptop) 
+### Task 2: Installing Terraform onto `Jump Server` to automate the creation of 2 more EC2 instances.
+
+Once the Jump Server is up and running, SSH into the machine using `MobaXterm` or `Putty` with the username `ubuntu` and do the following:
 
 ```
 sudo hostnamectl set-hostname AnchorServer
