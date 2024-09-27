@@ -2,7 +2,7 @@
 
 ### Task 1: Configure Jenkins Server
 
-Initially, Copy the **private key** from **Anchor Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
+Initially, Copy the **private key** from **Jump Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
 ```
 cd ~
 ```
@@ -52,7 +52,7 @@ ssh ubuntu@<Public IP of Jenkins>
 
    **http://< Jenkin's Public IP>:8080/** (It requests the **InitialAdminPassword** during the setup.)
    
-2. To obtain the **InitialAdminPassword**, access the Jenkins Server by SSHing from the Anchor Server, utilizing Jenkins' Public IP.
+2. To obtain the **InitialAdminPassword**, access the Jenkins Server by SSHing from the Jump Server, utilizing Jenkins' Public IP.
 ```
 ssh ubuntu@xx.xx.xx.xx
 ```
