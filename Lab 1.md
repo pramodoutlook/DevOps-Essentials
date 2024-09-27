@@ -103,6 +103,8 @@ As a first step, create a keyPair using `ssh-keygen` Command.
 ```
 ssh-keygen -t rsa -b 2048 
 ```
+![image](https://github.com/user-attachments/assets/2e81febd-047c-46e6-9c6b-1e9056613866)
+
 Now Create the terraform directory and set up the config files in it
 ```
 mkdir devops-labs && cd devops-labs
