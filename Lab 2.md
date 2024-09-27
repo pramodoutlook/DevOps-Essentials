@@ -1,7 +1,4 @@
-## Lab 2: Git and GitHub Operations.
-
-**Objective:**
-This lab focuses on `Git` and `GitHub operations,` including `initializing a Git repository,` `making commits,` `creating branches,` and `pushing code to a GitHub repository.`
+## Git and GitHub Operations.
 
 ### Pre-requisites:
 1. Create a **GitHub Account** & **Empty Public Repository** with name as **"hello-world"**
@@ -25,8 +22,8 @@ This lab focuses on `Git` and `GitHub operations,` including `initializing a Git
 
    Once the `GitHub Account` and `Empty repository` is ready, let's operate in the Anchor Server.
 
----------------------------------------------------------------------
-### Task-1: Initializing the local git repository and committing changes
+
+### Task 1: Initializing the local git repository and committing changes
 
 On the `Anchor Server,` do the below:
 ```
@@ -89,8 +86,8 @@ git status
 ```
 Currently our Code is in Local Repository.
 
----------------------------------------------------------------------
-### Task-2: Pushing the Code to your Remote GitHub Repository  
+
+### Task 2: Pushing the Code to your Remote GitHub Repository  
 
 1. Create `Alias` as `Origin` to GitHub's Remote repository URL.
 ```
@@ -110,7 +107,7 @@ git push origin master
 
    (When you paste, PAT is invisible and It's the expected behavior.)
 
----------------------------------------------------------------------
+
 ### Task 3: Creating a Git Branch and Pushing Code to the Remote Repository
 * To create a new Branch
 ```
