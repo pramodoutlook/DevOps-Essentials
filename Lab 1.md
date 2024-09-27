@@ -41,13 +41,11 @@ sudo mv terraform /usr/local/bin
 rm terraform_1.9.2_linux_amd64.zip
 ```
 ```
-ls
 terraform -v
 ```
-```
-terraform
-```
----------------------------------------------------------------------
+
+![image](https://github.com/user-attachments/assets/4dc530fa-b206-4bf2-a0eb-9499ff9e923a)
+
 ### Task-2: Install Python 3, pip, AWS CLI, and Ansible on to Jump Server
 Install Python 3 and the required packages:
 ```
