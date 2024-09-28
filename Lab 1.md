@@ -389,6 +389,8 @@ Run the above playbook to deploy the packages onto target servers.
 ```
 ansible-playbook main.yaml
 ```
+![image](https://github.com/user-attachments/assets/08b775c7-3f56-4aac-87bd-c0f97f01badb)
+
 
 ### Task 8 : Verify the Jenkins and Docker landing page.
 Verify the Jenkins Landing Page: Open a web browser and navigate to your Jenkins landing page using your Jenkins server's public IP address. Replace `<Your_Jenkins_IP>` with the actual public IP.
