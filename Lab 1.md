@@ -400,6 +400,8 @@ http://<Your_Jenkins_IP>:8080/
 ![image](https://github.com/user-attachments/assets/0fef3915-1827-4d21-8ecf-4041d0ad5d5a)
 
 
+</br>
+</br>
 Verify the Docker Landing Page: Open a web browser and access the Docker landing page using your Docker server's public IP address. Replace `<Your_Docker_IP>` with the actual public IP.
 ```
 http://<Your_Docker_IP>:4243/version
