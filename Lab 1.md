@@ -110,7 +110,7 @@ Now Create the terraform directory and set up the config files in it
 mkdir devops-labs && cd devops-labs
 ```
 ```
-vi DevOpsServers.tf
+vi main.tf
 ```
 Copy and paste the below code into `DevOpsServers.tf`
 ```
