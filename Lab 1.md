@@ -265,6 +265,7 @@ vi main.yaml
 Copy and paste the below code and save it.
 ```
 ---
+
 - name: Start installing Jenkins pre-requisites before installing Jenkins
   hosts: jenkins-server
   become: yes
@@ -308,14 +309,13 @@ Copy and paste the below code and save it.
   - name: Jenkins is installed. Lets start 'Jenkins' now!
     service: name=jenkins state=started
 
+
   - name: Wait until the file /var/lib/jenkins/secrets/initialAdminPassword is present before continuing
     wait_for:
       path: /var/lib/jenkins/secrets/initialAdminPassword
-
   - name: You can find Jenkins admin password under 'debug'
     command: cat /var/lib/jenkins/secrets/initialAdminPassword
     register: out
-
   - debug: var=out.stdout_lines
 
 
@@ -369,10 +369,12 @@ Copy and paste the below code and save it.
       state: started
       enabled: yes
 
+
   - lineinfile:
        dest: /lib/systemd/system/docker.service
        regexp: '^ExecStart='
        line: 'ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
+
 
   - name: Reload systemd
     command: systemctl daemon-reload
