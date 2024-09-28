@@ -385,7 +385,7 @@ Copy and paste the below code and save it.
 ```
 Run the above playbook to deploy the packages onto target servers.
 ```
-ansible-playbook DevOpsSetup.yml
+ansible-playbook main.yaml
 ```
 
 ### Task 8 : Verify the Jenkins and Docker landing page.
