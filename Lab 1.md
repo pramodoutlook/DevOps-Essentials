@@ -260,7 +260,7 @@ cd ~ && mkdir ansible && cd ansible
 ```
 Now, Create a playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.` For this Create a new File with the name `DevOpsSetup.yml.`
 ```
-vi DevOpsSetup.yml
+vi main.yaml
 ```
 Copy and paste the below code and save it.
 ```
