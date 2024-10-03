@@ -50,10 +50,10 @@ git init .
 To set the `User Identity` ie... `email and user name.` you can execute below commands:
 
 ```
-git config --global user.email "< Add your email >"
+git config --global user.email meharnafis@gmail.com
 ```
 ```
-git config --global user.name "< Add your Name >"
+git config --global user.name mehar
 ```
 ```
 git status
