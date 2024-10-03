@@ -112,7 +112,7 @@ mkdir devops-labs && cd devops-labs
 ```
 vi main.tf
 ```
-Copy and paste the below code into `DevOpsServers.tf`
+Copy and paste the below code into `main.tf`
 ```
 provider "aws" {
   region = var.region
