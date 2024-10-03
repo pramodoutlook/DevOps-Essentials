@@ -192,7 +192,6 @@ git push new-repo master
 
 (**Note:** PAT is invisible when you paste)
 
-### Important Note:
-*  Once the Java code is pushed from local repo of git to github's helloworld repository in pom.xml file change the version to `3.3.2`
+
 
 
