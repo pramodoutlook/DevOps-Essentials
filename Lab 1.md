@@ -147,7 +147,7 @@ resource "aws_instance" "my-machine" {
   }
 }
 ```
-Now, create the variables file with all variables to be used in the `DevOpsServers.tf` config file.
+Now, create the variables file with all variables to be used in the `main.tf` config file.
 ```
 vi variables.tf
 ```
@@ -258,7 +258,7 @@ In Jump Server Create a directory and change to it
 ```
 cd ~ && mkdir ansible && cd ansible
 ```
-Now, Create a playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.` For this Create a new File with the name `DevOpsSetup.yml.`
+Now, Create a playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.` For this Create a new File with the name `main.yml.`
 ```
 vi main.yaml
 ```
