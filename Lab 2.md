@@ -78,7 +78,7 @@ git log
 ```
 git status
 ```
-Currently our Code is in Local Repository.
+Currently, our Code is in Local Repository.
 
 
 ### Task 2: Pushing the Code to your Remote GitHub Repository  
@@ -87,7 +87,7 @@ Currently our Code is in Local Repository.
 ```
 git remote add origin <Replace your Repository URL> 
 ```
-(**Example:** `git remote add origin https://github.com/janjiralakirankumar/hello-world.git`)
+(**Example:** `git remote add origin https://github.com/meharnafis/hello-world.git`)
 
 2. To view a specific alias use the below command.
 ```
