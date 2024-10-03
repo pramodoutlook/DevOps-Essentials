@@ -2,7 +2,7 @@
 
 ### Objective: 
 List of tasks we will be performing in this Lab
-1. Initialize a local Git repository on Anchor EC2 instance.
+1. Initialize a local Git repository on JumpServer EC2 instance.
 2. Configure Git settings like email and username.
 3. Add and commit changes to the Git repository.
 4. Create and switch between Git branches.
