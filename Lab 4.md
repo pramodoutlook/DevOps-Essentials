@@ -1,6 +1,5 @@
-## Lab 4: Using GitWebHook to build your code automatically using Jenkins
+## Using `GitWebHook` to build your code automatically using Jenkins
 
-**Objective:**
 This lab focuses on configuring `Git WebHooks` to automatically `trigger Jenkins builds` when code changes are pushed to a GitHub repository.
 
 ### Task-1: Setting up GitHub Integration in Jenkins for Automated Builds:
