@@ -1,7 +1,4 @@
-## Lab-5: Configuring Docker Machine as Jenkins Slave, build and deploy code in Docker Host as a container
-
-**Objective:**
-In this lab, you will set up a `Docker Server` as a `Jenkin's Slave,`and `build a Docker image` for a Java Web Application, and `Deploy it in a Docker container` in a Docker Server.
+## Configuring `Docker Machine` as Jenkins Slave, build and deploy code in Docker Host as a container
 
 ### Task-1: Configuring Docker Machine as Jenkins Slave.
 
