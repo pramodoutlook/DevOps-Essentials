@@ -1,5 +1,9 @@
 ## Configuring Jenkins server and Installing Tomcat onto Jenkin's Server for Deploying our Application.
 
+###  Objective: 
+The objective of this lab is to configure Jenkins to build and deploy applications. It includes Setting up Jenkins, installing necessary plugins and configuring Jenkins to build Maven projects, and Installing Tomcat Server.
+
+
 ### Task 1: Configure Jenkins Server
 
 Initially, Copy the **private key** from **Jump Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
