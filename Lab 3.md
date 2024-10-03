@@ -1,4 +1,4 @@
-## Configuring Jenkins Server 
+## Configuring `Jenkins Server` 
 
 ###  Objective: 
 1. Setting up Jenkins and Installing necessary plugins
