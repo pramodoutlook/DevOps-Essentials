@@ -3,54 +3,7 @@
 ###  Objective: 
 To configure Jenkins to build and deploy applications. It includes Setting up Jenkins, installing necessary plugins and configuring Jenkins to build Maven projects, and Installing Tomcat Server.
 
-
 ### Task 1: Configure Jenkins Server
-
-Initially, Copy the **private key** from **Jump Server** to the **Jenkins Server** & **Docker Server**. so, that we can SSH from **Jenkins Server** to **Docker Server** and viseversa.
-```
-cd ~
-```
-```
-ansible jenkins-server -m copy -a "src=/home/ubuntu/.ssh/id_rsa dest=/home/ubuntu/.ssh/id_rsa" -b
-```
-```
-ansible jenkins-server -m copy -a "src=/home/ubuntu/.ssh/id_rsa.pub dest=/home/ubuntu/.ssh/id_rsa.pub" -b
-```
-  
-   <details>
-     <summary>Here's a breakdown of the command:</summary>
-     
-   - `ansible`: The Ansible command-line tool.
-   - `jenkins-server`: The target machine specified in your inventory file.
-   - `-m copy`: Specifies the Ansible module to use, in this case, the `copy` module.
-   - `-a "src=/home/ubuntu/.ssh/id_rsa dest=/home/ubuntu/.ssh/id_rsa"`: Specifies the arguments for the module, indicating the source and destination paths for the file copy.
-   - `-b`: Run the Ansible command with elevated privileges.
-   
-   </details>
-
-```
-ansible docker-server -m copy -a "src=/home/ubuntu/.ssh/id_rsa dest=/home/ubuntu/.ssh/id_rsa" -b
-```
-
-   <details>
-     <summary>Here's a breakdown of the command:</summary>
-     
-   - `ansible`: The Ansible command-line tool.
-   - `docker-server`: The target machine specified in your inventory file.
-   - `-m copy`: Specifies the Ansible module to use, in this case, the `copy` module.
-   - `-a "src=/home/ubuntu/.ssh/id_rsa dest=/home/ubuntu/.ssh/id_rsa"`: Specifies the arguments for the module, indicating the source and destination paths for the file copy.
-   - `-b`: Run the Ansible command with elevated privileges.
-   
-   </details>
-
-Now `SSH` from `Jenkins Server` ---> `Docker Server` and from `Docker Server` ---> `Jenkins Server`
-```
-ssh ubuntu@<Public IP of Docker>
-```
-```
-ssh ubuntu@<Public IP of Jenkins>
-```
-
 
 1. Go to the **Web Browser** and open a new tab then enter the URL as shown:
 
