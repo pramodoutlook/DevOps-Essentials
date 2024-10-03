@@ -85,13 +85,13 @@ Currently, our Code is in Local Repository.
 
 1. Create `Alias` as `Origin` to GitHub's Remote repository URL.
 ```
-git remote add origin <Replace your Repository URL> 
+git remote add new-repo <Replace your Repository URL> 
 ```
-(**Example:** `git remote add origin https://github.com/meharnafis/hello-world.git`)
+(**Example:** `git remote new-repo origin https://github.com/meharnafis/hello-world.git`)
 
 2. To view a specific alias use the below command.
 ```
-git remote show origin
+git remote show new-repo
 ```
 3. Now you can push your code from `Local Repository` to Remote Repository using the below command.
 ```
