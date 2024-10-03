@@ -1,5 +1,14 @@
 ## Git and GitHub Operations.
 
+### Summary of  the tasks we will be performing in this Lab
+
+1. Initialize a local Git repository on Anchor EC2 instance.
+2. Configure Git settings like email and username.
+3. Add and commit changes to the Git repository.
+4. Create and switch between Git branches.
+5. Make changes and commits in different branches.
+6. Merge branches and Push the code to a GitHub repository.
+
 ### Pre-requisites:
 1. Create a **GitHub Account** & **Empty Public Repository** with name as **"hello-world"**
 
