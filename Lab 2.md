@@ -1,4 +1,4 @@
-## Git and GitHub Operations.
+## `Git` and `GitHub` Operations.
 
 ### Objective: 
 List of tasks we will be performing in this Lab
