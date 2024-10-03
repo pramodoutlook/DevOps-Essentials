@@ -1,7 +1,7 @@
 ## Configuring Jenkins server and Installing Tomcat onto Jenkin's Server for Deploying our Application.
 
 ###  Objective: 
-The objective of this lab is to configure Jenkins to build and deploy applications. It includes Setting up Jenkins, installing necessary plugins and configuring Jenkins to build Maven projects, and Installing Tomcat Server.
+To configure Jenkins to build and deploy applications. It includes Setting up Jenkins, installing necessary plugins and configuring Jenkins to build Maven projects, and Installing Tomcat Server.
 
 
 ### Task 1: Configure Jenkins Server
