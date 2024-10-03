@@ -1,9 +1,11 @@
-## Configuring Jenkins server and Installing Tomcat onto Jenkin's Server for Deploying our Application.
+## Configuring Jenkins Server 
 
 ###  Objective: 
-To configure Jenkins to build and deploy applications. It includes Setting up Jenkins, installing necessary plugins and configuring Jenkins to build Maven projects, and Installing Tomcat Server.
+1. Setting up Jenkins and Installing necessary plugins
+2. Configuring Jenkins to build Maven projects
+3. Installing Tomcat Server.
 
-### Task 1: Configure Jenkins Server
+### Task 1: Login to the Jenkins Server
 
 1. Go to the **Web Browser** and open a new tab then enter the URL as shown:
 
@@ -13,25 +15,22 @@ To configure Jenkins to build and deploy applications. It includes Setting up Je
 ```
 ssh ubuntu@xx.xx.xx.xx
 ```
-From Jenkins execute the below command.
+From Jenkins execute the below command and copy the password.
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
-   (**Example:** "afbe8d33e25b4b908c0b9f91546f09e6")
-
-#### Step-02:
-
-1. Now, go back to jenkin's landing page in the **Web Browser**:
+   
+3. Now, go back to Jenkin's landing page in the **Web Browser**:
    
    (Enter the Jenkins URL as shown: **http://< Jenkin's Public IP>:8080/**)
 
-2. Under Unlock Jenkins, enter the above **initialAdminPassword** & click **Continue**.
-3. Click on **Install suggested Plugins** on the Customize Jenkins page.
-4. Once the plugins are installed, it gives you the page where you can create a New **Admin User**. 
-5. Enter the **User Id** and **Password** followed by **Name** and **E-Mail ID** then click on **Save & Continue**.
-6. In the next step, on the Instance Configuration Page, verify your **Jenkins Public IP** and **Port Number** then click on **Save and Finish**
+4. Under Unlock Jenkins, enter the above **initialAdminPassword** & click **Continue**.
+5. Click on **Install suggested Plugins** on the Customize Jenkins page.
+6. Once the plugins are installed, it gives you the page where you can create a New **Admin User**. 
+7. Enter the **User Id** and **Password** followed by **Name** and **E-Mail ID** then click on **Save & Continue**.
+8. In the next step, on the Instance Configuration Page, verify your **Jenkins Public IP** and **Port Number** then click on **Save and Finish**
 
-#### Step-03: Configuring Maven in Jenkins
+### Task 2: Configuring Maven in Jenkins
 
 Do the below in Jenkin's Dashboard:
 
@@ -42,7 +41,7 @@ Do the below in Jenkin's Dashboard:
 5. Inside Tool Configuration, look for **Maven installations**, click **Add Maven**. 
 6. Give the Name as **"Maven"**, Version-Default one (Latest), and **Save** the configuration.
 
-#### Step-04:
+### Task 3: 
 
 1. Create a new project for your application build by selecting **New Item** from the Jenkins homepage.
 2. Enter an item name as **hello-world** and select the project as **Maven Project** and then click **OK.**
@@ -51,26 +50,17 @@ Do the below in Jenkin's Dashboard:
 4. In the Credentials field, you have to click **Add** and then click on **Jenkins**.
 5. Then you will be prompted to the **Jenkins Credentials Provider** page. Under Add Credentials, you can add your **GitHub Username**, **Password**, and **Description**. Then click on **Add**.
 6. In the Source Code Management page, navigate to Credentials, and select your GitHub credentials.
-7. Leave all other values as default, navigate to the "**Build**" tab, and in the "Goals and options" section, input "**clean package**". Save the configuration.
-
-   #### Note: 
-   
-   The 'clean package' command clears the target directory, Builds the project, and packages the resulting WAR file into the target directory.
-
+7. Leave all other values as default, navigate to the "**Build**" tab, and in the "Goals and options" section, input "**clean package**". Save the configuration. (The 'clean package' command clears the target directory, Builds the project, and packages the resulting WAR file into the target directory)
 8. Return to the Maven project "**hello-world**" and click on "**Build Now**" to initiate the build process for your application's **.war** file.
 
       * You can go to **Workspace** > **dist** folder to see that the **.war** file is created there.
       * war file will be created in **/var/lib/jenkins/workspace/hello-world/target/**
 
----------------------------------------------------------------------
-### Task-2: Installing and Configuring Tomcat for Deploying our Application on the same Jenkins Server
 
-![Deploy Code to Tomcat Server](https://github.com/janjiralakirankumar/DevOpsEssentials/assets/137407373/0bf912eb-86b9-4271-ac58-79f582175632)
+### Task 4: Installing and Configuring Tomcat for Deploying our Application on the same Jenkins Server
+SSH into the Jenkins server as the root user and install the Tomcat web server.(If you are already in Jenkins Server, again SSH is not needed.)
 
-* SSH into the Jenkins server as the root user and install the Tomcat web server.
-  **Note:** (If you are already in Jenkins Server, again SSH is not needed.)
-
-#### Step-01: Install Tomcat on to Jenkins Server
+Install Tomcat on to Jenkins Server
 
 ```
 sudo apt update
@@ -85,10 +75,7 @@ ss -ltn
 ```
 sudo systemctl enable tomcat9
 ```
-
-#### Step-02: Navigate to **server.xml** and change the Tomcat port number from **8080 to 9999** since port 8080 is already in use by Jenkins
-
-1. Navigate to **server.xml** and change the port number
+Now navigate to **server.xml** and change the port number
 ```
 sudo vi /etc/tomcat9/server.xml
 ```
@@ -99,7 +86,7 @@ g/8080/s//9999/g
 ```
 Save the file using `ESCAPE+:wq!`
 
-2. To Verify whether the Port is changed, execute the below Command.
+To Verify whether the Port is changed, execute the below Command.
 ```
 cat /etc/tomcat9/server.xml
 ```
@@ -107,7 +94,7 @@ cat /etc/tomcat9/server.xml
 ```
 sudo chmod 766 /etc/tomcat9/server.xml
 ```
-3. Now Install Default JDK tomcat requires it.
+Now Install Default JDK tomcat requires it.
 ```
 sudo apt-get install default-jdk
 ```
@@ -120,7 +107,7 @@ sudo service tomcat9 status
 ```
 **To exit**, press **Ctrl+C**
 
-4. Once the Tomcat service restart is successful, go to your web browser and enter **Jenkins Server's Public IP address** followed by **9999** port.
+Once the Tomcat service restart is successful, go to your web browser and enter **Jenkins Server's Public IP address** followed by **9999** port.
 
    (Example: **http://< Jenkins Public IP >:9999**     (Or)     **http://184.72.112.155:9999**)
 
@@ -152,9 +139,8 @@ sudo cp -R /var/lib/jenkins/workspace/hello-world/target/hello-world-war-1.0.0.w
 
    **Note:** Assuming your Jenkins job generated `hello-world-war-1.0.0.war` in the workspace, this command copies it to Tomcat's webapps directory, enabling deployment and execution.
 
-2. Access your browser and enter the Jenkins Public IP address, followed by port 9999 and the path (URL: **http://< Jenkins Public IP >:9999/hello-world-war-1.0.0/**).
-3. Confirm Tomcat is serving your web page.
-4. Stop tomcat9 and remove it to prevent slowing down the Jenkins server.
+Access your browser and enter the Jenkins Public IP address, followed by port 9999 and the path (URL: **http://< Jenkins Public IP >:9999/hello-world-war-1.0.0/**).
+Confirm Tomcat is serving your web page. Now stop tomcat9 and remove it to prevent slowing down the Jenkins server.
 ```
 sudo service tomcat9 stop
 ```
