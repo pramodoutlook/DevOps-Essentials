@@ -83,11 +83,11 @@ Currently, our Code is in Local Repository.
 
 ### Task 2: Pushing the Code to your Remote GitHub Repository  
 
-1. Create `Alias` as `Origin` to GitHub's Remote repository URL.
+1. Create `Alias` as `new-repo` to GitHub's Remote repository URL.
 ```
 git remote add new-repo <Replace your Repository URL> 
 ```
-(**Example:** `git remote new-repo origin https://github.com/meharnafis/hello-world.git`)
+(**Example:** `git remote add new-repo https://github.com/meharnafis/hello-world.git`)
 
 2. To view a specific alias use the below command.
 ```
@@ -95,7 +95,7 @@ git remote show new-repo
 ```
 3. Now you can push your code from `Local Repository` to Remote Repository using the below command.
 ```
-git push origin master 
+git push new-repo master 
 ```
 **Note:** When it asks for a password, enter the **Personal Access Token** and Press Enter
 
@@ -150,7 +150,7 @@ git log
 ```
 Pushing the same file from `Local Repository` to Remote Repository
 ```
-git push origin dev
+git push new-repo dev
 ```
 #### When it asks for a `User ID` enter `GitHub's User ID,` and when it asks for a `password` Enter `PAT` and then Press Enter. 
 
@@ -174,7 +174,7 @@ git branch
 git merge dev
 ```
 ```
-git push origin prod
+git push new-repo prod
 ```
 #### When it asks for a `User ID` enter `GitHub's User ID,` and when it asks for a `password` Enter `PAT` and then Press Enter. 
 
@@ -186,7 +186,7 @@ git checkout master
 git merge prod
 ```
 ```
-git push origin master
+git push new-repo master
 ```
 #### When it asks for a `User ID` enter `GitHub's User ID,` and when it asks for a `password` Enter `PAT` and then Press Enter. 
 
