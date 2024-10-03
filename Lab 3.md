@@ -110,12 +110,7 @@ sudo service tomcat9 status
 Once the Tomcat service restart is successful, go to your web browser and enter **Jenkins Server's Public IP address** followed by **9999** port.
 
    (Example: **http://< Jenkins Public IP >:9999**     (Or)     **http://184.72.112.155:9999**)
-
-   * Now you can check the Tomcat running on **port 9999** on the same machine and it shows the WebPage.
-  
-#### Step-03: Copy the previously built **.war**
-
-1. Copy the previously built **.war** file from the Jenkins workspace to the Tomcat webapps directory to deploy the web content.
+Now Copy the previously built **.war** file from the Jenkins workspace to the Tomcat webapps directory to deploy the web content.
 ```
 sudo cp -R /var/lib/jenkins/workspace/hello-world/target/hello-world-war-1.0.0.war /var/lib/tomcat9/webapps
 ```
