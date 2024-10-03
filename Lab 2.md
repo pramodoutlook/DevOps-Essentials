@@ -39,16 +39,10 @@ sudo apt install git -y
 ```
 Download the **Java Code** that we are going to use in the CICD pipeline.
 ```
-wget https://devops-e-e.s3.ap-south-1.amazonaws.com/hello-world-master.zip
+git clone https://github.com/Mehar-Nafis/DevOps-Training-Hello-World-App.git
 ```
 ```
-unzip hello-world-master.zip
-```
-```
-rm hello-world-master.zip
-```
-```
-cd hello-world-master
+cd DevOps-Training-Hello-World-App/
 ```
 ```
 git init .
