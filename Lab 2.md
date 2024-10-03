@@ -37,7 +37,7 @@ git --version
 ```
 sudo apt install git -y
 ```
-Download the **Java Code** that we are going to use in the CICD pipeline.
+Clone the existing directory
 ```
 git clone https://github.com/Mehar-Nafis/DevOps-Training-Hello-World-App.git
 ```
