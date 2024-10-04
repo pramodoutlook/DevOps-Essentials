@@ -3,7 +3,6 @@
 ###  Objective: 
 1. Setting up Jenkins and Installing necessary plugins
 2. Configuring Jenkins to build Maven projects
-3. Installing Tomcat Server.
 
 ### Task 1: Login to the Jenkins Server
 
