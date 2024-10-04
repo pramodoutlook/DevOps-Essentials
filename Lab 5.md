@@ -14,4 +14,4 @@ Now exit from the Jump Server
 ```
 exit
 ```
-Now naviaget to ouur AWS Managment Console and manulally terminate your JumpServer.
+Now naviaget to your AWS Managment Console and manulally terminate your JumpServer.
