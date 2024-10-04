@@ -79,7 +79,8 @@ sudo docker run -d -p 8080:8080 --name helloworld-container helloworld-image
 Manually click on **"Build Now"** in Jenkins. After a successful build, access the application.
 
 In your browser, type **"http:// < Your Docker Host Public IP >:8080/hello-world-war-1.0.0/"** to view the website.
-*Example:* http://3.95.192.77:8080/hello-world-war-1.0.0/
+
+
 ![image](https://github.com/user-attachments/assets/59b751b0-b120-46d3-b0bd-6bb15dec8108)
 
 
