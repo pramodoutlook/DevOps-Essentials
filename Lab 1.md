@@ -156,6 +156,12 @@ resource "aws_instance" "my-machine" {
   provisioner "file" {
     source      = "/home/ubuntu/.ssh/id_rsa"   # Source path on Host machine
     destination = "/home/ubuntu/.ssh/id_rsa"  # Destination path on EC2 instance
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("/home/ubuntu/.ssh/id_rsa")  # Replace with the path to your private key
+      host        = self.public_ip
+    }
   }
 
   # After the file is copied, change its permissions
@@ -179,7 +185,6 @@ resource "aws_instance" "my-machine" {
     EOT
   }
 }
-
 ```
 Now, create the variables file with all variables to be used in the `main.tf` config file.
 ```
