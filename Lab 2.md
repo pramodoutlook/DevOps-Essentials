@@ -161,5 +161,5 @@ Pushing the same file from `Local Repository` to Remote Repository
 ```
 git push new-repo dev
 ```
-#### When it asks for a `User ID` enter `GitHub's User ID,` and when it asks for a `password` Enter `PAT` and then Press Enter. 
+
 
