@@ -201,7 +201,7 @@ variable public_key {
 
 variable "my-servers" {
   type    = list(string)
-  default = ["jenkins-server", "docker-server"]
+  default = ["Mehar-Jenkins-Server", "Mehar-Docker-Server"]
 }
 ```
 Now, execute the terraform commands to launch the new servers
