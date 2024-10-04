@@ -38,41 +38,6 @@
 
 Once the Slave Node is Online, then continue the below.
 
-#### Now, In the CLI, SSH into your Docker Host and execute the following steps to create a "Dockerfile" in the `/home/ubuntu` directory.
-```
-cd ~
-```
-```
-vi Dockerfile
-```
-enter the below:
-```
-# Pull Base Image
-FROM tomcat:8-jre8
-
-# Maintainer
-MAINTAINER "CloudThat"
-
-# Copy the war file to the images tomcat path
-ADD hello-world-war-1.0.0.war /usr/local/tomcat/webapps/
-```
-   <details>
-     <summary>Explanatory Notes of Above Docker FIle:</summary>
-     
-   The provided Dockerfile is a basic configuration for deploying a Java web application using the Tomcat web server. Here's the breakdown of each part:
-
-   1. `FROM tomcat:8-jre8`: Specifies the base image for the Docker container, utilizing the official Tomcat 8 image with Java 8 runtime. This image includes the Tomcat web server and Java runtime environment.
-
-   2. `MAINTAINER "CloudThat"`: A comment indicating the maintainer or author of the Dockerfile.
-
-   3. `ADD hello-world-war-1.0.0.war /usr/local/tomcat/webapps/`: Copies the Java web application's WAR file (`hello-world-war-1.0.0.war`) into the `/usr/local/tomcat/webapps/` directory within the container. Upon Tomcat startup, the WAR file is automatically deployed as a web application.
-   
-   </details>
-
-This Dockerfile packages a Java web app in a container using a Tomcat base image. Customize it for your needs. After building and running a container, your app should be accessible via Tomcat on port 8080, following Jenkins job steps.
-
-### Task-4:
-
 1. Navigate to your **Jenkins Home page**, choose the **hello-world project** from the drop-down, and click on the Configure tab.
 2. In the **General Tab**, choose **Restrict where this project can be run** and set the Label Expression to **Slave-Nodes.**
 3. Move to the **Post Build Steps Tab**, select **"Run only if the build succeeds,"** and then select `add a post-build step`, choose **Execute shell** from the drop-down, paste the provided commands (below) into the shell, and click **Save.**
