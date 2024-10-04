@@ -47,9 +47,9 @@ Once the Slave Node is Online, then continue the below.
 ```
 cd ~
 cp -f /home/ubuntu/workspace/hello-world/target/hello-world-war-1.0.0.war .
-sudo docker container rm -f yourname-helloworld-container
+sudo docker container rm -f helloworld-container
 sudo docker build -t helloworld-image .
-sudo docker run -d -p 8080:8080 --name yourname-helloworld-container helloworld-image
+sudo docker run -d -p 8080:8080 --name helloworld-container helloworld-image
 ```
    <details>
      <summary>Click here for breakup of command</summary>
