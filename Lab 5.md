@@ -5,14 +5,14 @@
 1. In Jenkins Webpage, Navigate to **Jenkin's Dashboard** and click on the **Manage Jenkins** and **Nodes**.
 2. Click on **New Node** in the next window. Give the node name as `docker-slave` and Select `Permanent Agent`
 3. Fill out the details for the node docker-slave as given below.
-   * The name should be given as **docker-slave**,
-   * Remote Root Directory as **/home/ubuntu**,
-   * labels to be **Slave-Nodes**,
+   * The name should be given as **docker-slave**
+   * Remote Root Directory as **/home/ubuntu**
+   * labels to be **Slave-Nodes**
    * usage to be given as **"use this node as much as possible"**
    * Launch method to be set as **"launch agents via SSH"**.
    * In the host section, give the **Public IP of the Docker instance**.
-   * For Credentials for this Docker node, click on the dropdown button named **Add** and then click on **Jenkins**;
-   * Then in the next window, in kind select **SSH username with private key** (Give username as `ubuntu`),
+   * For Credentials for this Docker node, click on the dropdown button named **Add** and then click on **Jenkins**
+   * Then in the next window, in kind select **SSH username with private key** (Give username as `ubuntu`)
    * In **Private Key** Select **Enter directly**
    
    **Note:** To get the `Private Key` go to `Jenkins Server` and Execute the below command:
