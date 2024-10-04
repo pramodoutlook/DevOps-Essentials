@@ -42,8 +42,6 @@ Once the Slave Node is Online, then continue the below.
 2. In the **General Tab**, choose **Restrict where this project can be run** and set the Label Expression to **Slave-Nodes.**
 3. Move to the **Post Build Steps Tab**, select **"Run only if the build succeeds,"** and then select `add a post-build step`, choose **Execute shell** from the drop-down, paste the provided commands (below) into the shell, and click **Save.**
 
-#### Note: You may replace 'yourname' with your actual first name (lines 3 and 5).
-
 ```
 #!/bin/bash
 
@@ -75,22 +73,17 @@ sudo docker build -t helloworld-image .
 sudo docker run -d -p 8080:8080 --name helloworld-container helloworld-image
 
 ```
-Upon executing these commands, your Java web application should be deployed within a Docker container, accessible on port 8080 of your Docker host.
 
 ### Task 4: Building the **hello-world project**
 
-Either:
-1. Manually click on **"Build Now"** in Jenkins.
-2. Make a small change in GitHub files.
-
-After a successful build, access the Tomcat server page:
+Manually click on **"Build Now"** in Jenkins. After a successful build, access the application.
 
 In your browser, type **"http:// < Your Docker Host Public IP >:8080/hello-world-war-1.0.0/"** to view the website.
 *Example:* http://3.95.192.77:8080/hello-world-war-1.0.0/
+![image](https://github.com/user-attachments/assets/59b751b0-b120-46d3-b0bd-6bb15dec8108)
 
----------------------------------------------------------------------
-Once Done, It's time to **Clean up** the Instances
 
-We can now **terminate all the 3 instances** and we are Done with All Labs.
+
+
 
 
