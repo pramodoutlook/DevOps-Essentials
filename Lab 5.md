@@ -70,7 +70,7 @@ sudo docker run -d -p 8080:8080 --name yourname-helloworld-container helloworld-
 
 Upon executing these commands, your Java web application should be deployed within a Docker container, accessible on port 8080 of your Docker host.
 
-### Task-5: Building the **hello-world project**
+### Task 4: Building the **hello-world project**
 
 Either:
 1. Manually click on **"Build Now"** in Jenkins.
