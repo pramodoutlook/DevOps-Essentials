@@ -139,16 +139,37 @@ resource "aws_instance" "my-machine" {
     Name = each.key
   }
 
+  # Ensure the .ssh directory exists before copying the file
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("/path/to/your/private/key")  # Replace with the path to your private key
+      host        = self.public_ip
+    }
+
+    inline = [
+      "mkdir -p /home/ubuntu/.ssh"   # Ensure .ssh directory exists before copying the file
+    ]
+  }
+
   provisioner "file" {
     source      = "/home/ubuntu/.ssh/id_rsa"   # Source path on Host machine
     destination = "/home/ubuntu/.ssh/id_rsa"  # Destination path on EC2 instance
   }
-  
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("/home/ubuntu/.ssh/id_rsa")  # Path to your private key
-    host        = self.public_ip  # Assuming you want to use the public IP
+
+  # After the file is copied, change its permissions
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("/path/to/your/private/key")  # Replace with the path to your private key
+      host        = self.public_ip
+    }
+
+    inline = [
+      "chmod 400 /home/ubuntu/.ssh/id_rsa"  # Change the permissions of the copied file after it's been transferred
+    ]
   }
 
   provisioner "local-exec" {
@@ -158,6 +179,7 @@ resource "aws_instance" "my-machine" {
     EOT
   }
 }
+
 ```
 Now, create the variables file with all variables to be used in the `main.tf` config file.
 ```
