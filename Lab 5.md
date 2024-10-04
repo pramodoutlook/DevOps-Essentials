@@ -45,29 +45,36 @@ Once the Slave Node is Online, then continue the below.
 #### Note: You may replace 'yourname' with your actual first name (lines 3 and 5).
 
 ```
-cd ~
-cp -f /home/ubuntu/workspace/hello-world/target/hello-world-war-1.0.0.war .
-sudo docker container rm -f helloworld-container
-sudo docker build -t helloworld-image .
-sudo docker run -d -p 8080:8080 --name helloworld-container helloworld-image
-```
-   <details>
-     <summary>Click here for breakup of command</summary>
-     
-   The commands you provided are part of the Jenkins job's post-build steps, and they are responsible for building a Docker image and running a Docker container for your Java web application. Here's a breakdown of what each command does:
-   
-   1. `cd ~`: Change the working directory to the user's home directory.
-   
-   2. `cp -f /home/ubuntu/workspace/hello-world/target/hello-world-war-1.0.0.war .`: Copy the WAR file (presumably the artifact of your Java web application) from the Jenkins workspace to the current directory (`~`), where you'll perform the Docker build.
-   
-   3. `sudo docker container rm -f yourname-helloworld-container`: Remove any existing Docker container with the name "yourname-helloworld-container" forcefully if it exists. You should replace "yourname" with your actual first name.
-   
-   4. `sudo docker build -t helloworld-image .`: Build a Docker image with the tag "helloworld-image" based on the Dockerfile located in the current directory (`.`). The Dockerfile you created earlier specifies how the image should be built.
-   
-   5. `sudo docker run -d -p 8080:8080 --name yourname-helloworld-container helloworld-image`: Run a Docker container named "yourname-helloworld-container" from the "helloworld-image" image. This container will be detached (`-d`) and will map port 8080 on the host to port 8080 inside the container. You should replace "yourname" with your actual first name.
-      
-   </details>
+#!/bin/bash
 
+# Navigate to the home directory
+cd ~
+
+# Create Dockerfile
+cat <<EOL > Dockerfile
+# Pull Base Image
+FROM tomcat:8-jre8
+
+# Maintainer
+MAINTAINER "CloudThat"
+
+# Copy the war file to the image's tomcat path
+ADD hello-world-war-1.0.0.war /usr/local/tomcat/webapps/
+EOL
+
+# Copy the WAR file to the current directory
+cp -f /home/ubuntu/workspace/hello-world/target/hello-world-war-1.0.0.war .
+
+# Remove the old container if it exists
+sudo docker container rm -f helloworld-container
+
+# Build a new Docker image
+sudo docker build -t helloworld-image .
+
+# Run the new container
+sudo docker run -d -p 8080:8080 --name helloworld-container helloworld-image
+
+```
 Upon executing these commands, your Java web application should be deployed within a Docker container, accessible on port 8080 of your Docker host.
 
 ### Task 4: Building the **hello-world project**
