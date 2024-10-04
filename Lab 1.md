@@ -139,6 +139,18 @@ resource "aws_instance" "my-machine" {
     Name = each.key
   }
 
+  provisioner "file" {
+    source      = "/home/ubuntu/.ssh/id_rsa"   # Source path on Host machine
+    destination = "/home/ubuntu/.ssh/id_rsa"  # Destination path on EC2 instance
+  }
+  
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("/home/ubuntu/.ssh/id_rsa")  # Path to your private key
+    host        = self.public_ip  # Assuming you want to use the public IP
+  }
+
   provisioner "local-exec" {
     command = <<-EOT
       echo [${each.key}] >> /etc/ansible/hosts
