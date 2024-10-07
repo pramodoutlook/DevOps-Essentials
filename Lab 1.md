@@ -306,7 +306,7 @@ Copy and paste the below code and save it.
 ---
 
 - name: Start installing Jenkins pre-requisites before installing Jenkins
-  hosts: jenkins-server
+  hosts: Mehar-Jenkins-Server
   become: yes
   become_method: sudo
   gather_facts: no
@@ -359,7 +359,7 @@ Copy and paste the below code and save it.
 
 
 - name: Start the Docker installation steps
-  hosts: docker-server
+  hosts: Mehar-Docker-Server
   become: yes
   become_method: sudo
   gather_facts: no
