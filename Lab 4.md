@@ -34,7 +34,7 @@
    2. Now, Re-check whether the Slave node is Online/Offline.
    </details>
 
-### Task-3: Build and deploy code in Docker Host on the container.
+### Task-2: Build and deploy code in Docker Host on the container.
 
 Once the Slave Node is Online, then continue the below.
 
