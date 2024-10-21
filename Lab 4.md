@@ -1,4 +1,4 @@
-## Configuring `Docker Machine` as Jenkins Slave, build and deploy code in Docker Host as a container
+### Configuring `Docker Machine` as Jenkins Slave, build and deploy code in Docker Host as a container
 
 ### Task-1: Configuring Docker Machine as Jenkins Slave.
 
