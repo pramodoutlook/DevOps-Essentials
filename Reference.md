@@ -1,6 +1,6 @@
 ## DevOps Tools and Documentation Links:
 
-Here are the official websites and documentation links for some popular DevOps tools:
+Here are the official websites and documentation links for some popular DevOps tools.:
 
 1. **Version Control:**
    - **Git:**
