@@ -1,7 +1,7 @@
 #  DevOps Essentials 
 
 This guide provides step-by-step instructions for completing various DevOps labs, covering tasks like: 
-`Setting up servers using Terraform`, `Working with Git and GitHub`, `Configuring Jenkins`, and `Deploying code in Docker containers`.
+`Setting up servers using Terraform`, `Working with Git and GitHub`, `Configuring Jenkins`, and `Deploying code in Docker containers`..
 
 ### DevOps Essentials Lab Pre-requisites
 1. Basic understanding of Linux commands,
