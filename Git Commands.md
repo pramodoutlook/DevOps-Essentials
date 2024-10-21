@@ -1,4 +1,4 @@
-## Important Git Commands
+### Important Git Commands
 
 Here are some important Git commands and their brief explanations:
 
