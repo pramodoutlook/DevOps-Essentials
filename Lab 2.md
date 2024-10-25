@@ -34,7 +34,7 @@ List of tasks we will be performing in this Lab
 
 ### Task 1: Initializing the local git repository and committing changes
 
-On the `Jump Server,` do the below:
+On the `Jump Server,` do the below to change the current directory to the home directory:
 ```
 cd ~
 ```
@@ -59,10 +59,10 @@ git init .
 To set the `User Identity` ie... `email and user name.` you can execute below commands:
 
 ```
-git config --global user.email PSnafis@gmail.com
+git config --global user.email pramod.sunagar@outlook.com
 ```
 ```
-git config --global user.name PS
+git config --global user.name Pramod S
 ```
 ```
 git status
@@ -96,7 +96,7 @@ Currently, our Code is in Local Repository.
 ```
 git remote add new-repo <Replace your Repository URL> 
 ```
-(**Example:** `git remote add new-repo https://github.com/PSnafis/hello-world.git`)
+(**Example:** `git remote add new-repo https://github.com/pramodoutlook/hello-world.git`)
 
 2. To view a specific alias use the below command.
 ```
